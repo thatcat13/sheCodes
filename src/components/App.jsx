@@ -57,7 +57,7 @@ function App() {
           margin-left: 20px;
         }
       `}</style>
-      Ina! Izzy! Wooo!
+    Tic Tac Toe Yo!
       <Game />
     </div>
   );
