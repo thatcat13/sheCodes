@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
 import Footer from './Footer';
-import SignUp from './SignUp';
+import TilesContainer from './TilesContainer';
 
 
 function App() {
@@ -15,8 +15,7 @@ function App() {
           margin: 20px;
         }
       `}</style>
-      <p>App works!</p>
-      <SignUp />
+    <TilesContainer />
       <Footer />
     </div>
   );
