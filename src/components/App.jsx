@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Game from './Game';
+
 
 function App() {
   return (
     <div>
       <style jsx global>{`
         body {
-          font: 14px "Century Gothic", Futura, sans-serif;
+          font: 14px 'Roboto', monospace, sans-serif;
           margin: 20px;
         }
 
@@ -57,8 +57,8 @@ function App() {
           margin-left: 20px;
         }
       `}</style>
-    Tic Tac Toe Yo!
-      <Game />
+    <p>App works!</p>
+
     </div>
   );
 }
