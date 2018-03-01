@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
 import Footer from './Footer';
+import SignUp from './SignUp';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         }
       `}</style>
       <p>App works!</p>
+      <SignUp />
       <Footer />
     </div>
   );
