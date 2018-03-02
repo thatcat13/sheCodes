@@ -1,30 +1,29 @@
 
 import React from 'react';
 import SignUp from './SignUp';
+import Home from './Home';
 
 class NewUserControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      newUserRegistered: false
+      homePageVisible: false
     };
-    this.handleUserConfirmation = this.handleUserConfirmation.bind(this);
     console.log(this.state);
+    this.handleNewUserConfirmation = this.handleNewUserConfirmation.bind(this);
   }
 
-  handleUserConfirmation() {
-    alert('testing');
-    this.setState({newUserRegistered: true});
+  handleNewUserConfirmation() {
+    this.setState({homePageVisible: true});
   }
 
   render(){
-
     let currentlyVisibleContent = null;
-    if (this.state.newUserRegistered) {
-      currentlyVisibleContent = <App />;
+    if (this.state.homePageVisible) {
+      currentlyVisibleContent = <Home />;
     } else {
-      currentlyVisibleContent = <SignUp onUserConfirmation={this.handleUserConfirmation} />
+      currentlyVisibleContent = <SignUp onNewUserConfirmation={this.handleNewUserConfirmation} />
     }
     return (
       <div>

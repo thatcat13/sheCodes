@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function SignUp(){
+function SignUp(props){
 
   const anotherStyledComponentStyles = {
     display: 'flex',
@@ -63,14 +63,14 @@ function SignUp(){
           id='email'
           placeholder='Email'/>
 
-        <button onClick={props.onUserConfirmation} style={buttonStyles} type='submit'>Welcome</button>
+        <button onClick={props.onNewUserConfirmation} style={buttonStyles} type='submit'>Welcome</button>
       </form>
     </div>
   );
 }
 
 SignUp.propTypes = {
-  onUserConfirmation: PropTypes.func
+  onNewUserConfirmation: PropTypes.func
 }
 
 export default SignUp;

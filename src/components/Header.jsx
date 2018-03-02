@@ -46,11 +46,11 @@ function Header(){
         </div>
         <div>
           <Link style={linkStyles} to="/">Home </Link>  <Link style={linkStyles} to="/signup">SignUp</Link>  <Link style={linkStyles} to="/about">About</Link>
-          <button style={buttonStyles} type='submit'>Sign Me Up!</button>
         </div>
       </div>
     </div>
   );
 }
+
 
 export default Header;

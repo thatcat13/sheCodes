@@ -1,26 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Header';
-import Footer from './Footer';
-import Home from './Home';
+import TilesContainer from './TilesContainer';
+import NewUserControl from './NewUserControl';
 import { Switch, Route } from 'react-router-dom';
 
 
-
-function App() {
+function Home() {
   return (
     <div>
-      <Header />
       <style jsx global>{`
         body {
           font: 14px 'Roboto', monospace, sans-serif;
           margin: 20px;
         }
       `}</style>
-      <Home />
-      <Footer />
+      <Switch>
+        <Route exact path='/' component={TilesContainer} />
+        <Route exact path='/signup' component={NewUserControl} />
+      </Switch>
     </div>
   );
 }
 
-export default App;
+export default Home;
