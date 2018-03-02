@@ -3,37 +3,52 @@ import { Link } from 'react-router-dom';
 
 function Header(){
 
+  const outerDiv = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px'
+  }
   const pStyles = {
-    fontSize: '2em'
+    fontSize: '3em'
+  }
+  const linkStyles = {
+    fontSize: '2.5em',
+    color: 'black',
+    textShadow: '3px 2px 3px grey',
+    textDecoration: 'none',
+    padding: '5px'
   }
 
   const buttonStyles = {
-    width: '130px',
-    height: '40px',
+    width: '200px',
+    height: '50px',
     borderRadius: '10px',
     boxShadow: '3px 2px 3px grey',
     fontFamily: 'Roboto, monospace',
     fontWeight: 'bolder',
-    fontSize: '1em'
+    fontSize: '1.75em',
+    margin: '8px'
   };
 
 
   return (
     <div>
-      <style jsx>{`
-        a {
-          font-size: 2em;
-          color: black;
-          text-shadow: 3px 2px 3px grey;
-          text-decoration: none;
-        }
-        a:hover {
-          text-decoration: underline;
-        }
-      `}</style>
-    <p style={pStyles}>sheCodes( )</p>
-      <Link to="/">Home </Link>  <Link to="/signup">Sign Up</Link>  <Link to="/about">About</Link>
-      <button style={buttonStyles} type='submit'>Sign Me Up!</button>
+      <div style={outerDiv}>
+        <style jsx>{`
+
+          a:hover {
+            text-decoration: underline;
+          }
+        `}</style>
+        <div>
+          <p style={pStyles}>sheCodes( )</p>
+        </div>
+        <div>
+          <Link style={linkStyles} to="/">Home </Link>  <Link style={linkStyles} to="/signup">SignUp</Link>  <Link style={linkStyles} to="/about">About</Link>
+          <button style={buttonStyles} type='submit'>Sign Me Up!</button>
+        </div>
+      </div>
     </div>
   );
 }

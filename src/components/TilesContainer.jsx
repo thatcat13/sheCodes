@@ -1,6 +1,6 @@
 import React from 'react';
 import Tile from './Tile';
-
+import MediaQuery from 'react-responsive';
 
 
 function TilesContainer(){
@@ -24,8 +24,7 @@ function TilesContainer(){
   ]
 
   const containerStyles = {
-    alignItems: 'center',
-    border: '1px solid black'
+    alignItems: 'center'
   };
 
   return (

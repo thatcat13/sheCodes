@@ -17,19 +17,23 @@ function Tile(props){
     width: 'auto',
     height: 'auto',
     border: '1px solid black',
-    padding: '10px',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: '3em'
+  }
+
+  const h2Styles = {
+    marginBottom: '0'
   }
 
   const buttonStyles = {
-    width: '130px',
-    height: '30px',
+    width: '375px',
+    height: '60px',
     borderRadius: '10px',
     boxShadow: '3px 2px 3px grey',
     fontFamily: 'Roboto, monospace',
     fontWeight: 'bolder',
-    fontSize: '1em',
-    padding: '5px'
+    fontSize: '0.75em',
+    margin: '10px'
   };
 
   const imgStyles = {
@@ -39,7 +43,7 @@ function Tile(props){
   return (
     <div style={outerStyles}>
       <div style={tileStyles}>
-        <h3>{props.title}</h3>
+        <h2 style={h2Styles}>{props.title}</h2>
         <p>{props.body}</p>
         <img style={imgStyles} src={require(`./../${props.image}`)}></img>
         <button style={buttonStyles} type='submit'>Find out more!</button>
