@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import missO from './../missO.png';
+import PropTypes from 'prop-types';
 
-function Tile(){
+function Tile(props){
 
   const outerStyles = {
     padding: '20px',
@@ -15,7 +15,10 @@ function Tile(){
     alignItems: 'center',
     alignContent: 'center',
     width: 'auto',
-    height: 'auto'
+    height: 'auto',
+    border: '1px solid black',
+    padding: '10px',
+    textAlign: 'center'
   }
 
   const buttonStyles = {
@@ -29,16 +32,26 @@ function Tile(){
     padding: '5px'
   };
 
+  const imgStyles = {
+    margin: '7px'
+  };
+
   return (
     <div style={outerStyles}>
       <div style={tileStyles}>
-        <h3>missO and friends</h3>
-        <p>The official social network created by girls, for girls</p>
-        <img src={missO}></img>
+        <h3>{props.title}</h3>
+        <p>{props.body}</p>
+        <img style={imgStyles} src={require(`./../${props.image}`)}></img>
         <button style={buttonStyles} type='submit'>Find out more!</button>
       </div>
-  </div>
+    </div>
   )
+}
+
+Tile.propTypes = {
+  title: PropTypes.string,
+  body: PropTypes.string,
+  image: PropTypes.string
 }
 
 export default Tile;
