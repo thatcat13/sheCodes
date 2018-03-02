@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function SignUp(){
 
@@ -63,10 +63,14 @@ function SignUp(){
           id='email'
           placeholder='Email'/>
 
-        <button style={buttonStyles} type='submit'>Welcome</button>
+        <button onClick={props.onUserConfirmation} style={buttonStyles} type='submit'>Welcome</button>
       </form>
     </div>
   );
+}
+
+SignUp.propTypes = {
+  onUserConfirmation: PropTypes.func
 }
 
 export default SignUp;

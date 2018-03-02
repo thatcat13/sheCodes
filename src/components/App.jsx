@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
 import Footer from './Footer';
-import Home from './Home';
-import { Switch, Route } from 'react-router-dom';
 import SignUp from './SignUp';
-import SignUpControl from './SignUpControl';
+import NewUserControl from './NewUserControl';
+import TilesContainer from './TilesContainer';
+import { Switch, Route } from 'react-router-dom';
+
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         }
       `}</style>
       <Switch>
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={TilesContainer} />
+        <Route exact path='/signup' component={NewUserControl} />
       </Switch>
       <Footer />
     </div>
