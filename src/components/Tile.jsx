@@ -40,7 +40,7 @@ function Tile(props){
     margin: '7px'
   };
 
-  return (
+  const tileInformation =
     <div style={outerStyles}>
       <div style={tileStyles}>
         <h2 style={h2Styles}>{props.title}</h2>
@@ -49,13 +49,19 @@ function Tile(props){
         <button style={buttonStyles} type='submit'>Find out more!</button>
       </div>
     </div>
-  )
+
+  return (
+    <div>
+      {tileInformation}
+    </div>
+  );
 }
 
 Tile.propTypes = {
   title: PropTypes.string,
   body: PropTypes.string,
-  image: PropTypes.string
+  image: PropTypes.string,
+  tileId: PropTypes.string
 }
 
 export default Tile;
