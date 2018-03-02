@@ -1,29 +1,28 @@
 
 import React from 'react';
 import SignUp from './SignUp';
-import Home from './Home';
+import ConfirmationQuestions from './ConfirmationQuestions';
 
 class NewUserControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      homePageVisible: false
+      signUpFormVisible: false
     };
-    console.log(this.state);
     this.handleNewUserConfirmation = this.handleNewUserConfirmation.bind(this);
   }
 
   handleNewUserConfirmation() {
-    this.setState({homePageVisible: true});
+    this.setState({signUpFormVisible: true});
   }
 
   render(){
     let currentlyVisibleContent = null;
-    if (this.state.homePageVisible) {
-      currentlyVisibleContent = <Home />;
+    if (this.state.signUpFormVisible) {
+      currentlyVisibleContent = <SignUp />
     } else {
-      currentlyVisibleContent = <SignUp onNewUserConfirmation={this.handleNewUserConfirmation} />
+      currentlyVisibleContent = <ConfirmationQuestions onNewUserConfirmation={this.handleNewUserConfirmation}/>;
     }
     return (
       <div>
