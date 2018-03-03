@@ -33,6 +33,7 @@ class Home extends React.Component {
 
   handleAddingNewUser(newUser) {
     let newMasterTileList = this.state.masterTileList.slice();
+    this.setState({masterTileList: newMasterTileList});
   }
 
 
@@ -50,7 +51,8 @@ class Home extends React.Component {
 
           <Switch>
             <Route exact path='/' render={()=><TilesContainer tileList={this.state.masterTileList}/>} />
-            <Route exact path='/signup' component={NewUserControl} />
+            <Route path='/signup' render={()=><NewUserControl onNewUserCreation={this.handleAddingNewUser} />} />
+
           </Switch>
         </div>
       );

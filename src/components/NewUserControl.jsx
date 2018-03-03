@@ -3,6 +3,7 @@
 import React from 'react';
 import SignUp from './SignUp';
 import ConfirmationQuestions from './ConfirmationQuestions';
+import PropTypes from 'prop-types';
 
 class NewUserControl extends React.Component {
 
@@ -21,7 +22,7 @@ class NewUserControl extends React.Component {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.signUpFormVisible) {
-      currentlyVisibleContent = <SignUp />
+      currentlyVisibleContent = <SignUp onNewUserCreation={this.props.onNewUserCreation}/>;
     } else {
       currentlyVisibleContent = <ConfirmationQuestions onNewUserConfirmation={this.handleNewUserConfirmation}/>;
     }
@@ -31,6 +32,10 @@ class NewUserControl extends React.Component {
       </div>
     );
   }
+}
+
+NewUserControl.propTypes = {
+  onNewUserCreation: PropTypes.func
 }
 
 export default NewUserControl;
