@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 function TilesContainer(props){
 
+  // props.onNewUserCreation({});
 
   const containerStyles = {
     alignItems: 'center'

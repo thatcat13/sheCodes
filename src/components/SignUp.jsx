@@ -8,9 +8,6 @@ function SignUp(props){
 
   function handleNewUserSubmission(event) {
     event.preventDefault();
-    console.log(_firstname.value);
-    console.log(_lastname.value);
-    console.log(_email.value);
     _firstname.value='';
     _lastname.value='';
     _email.value='';
