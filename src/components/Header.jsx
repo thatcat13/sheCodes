@@ -20,17 +20,6 @@ function Header(){
     padding: '5px'
   }
 
-  const buttonStyles = {
-    width: '200px',
-    height: '50px',
-    borderRadius: '10px',
-    boxShadow: '3px 2px 3px grey',
-    fontFamily: 'Roboto, monospace',
-    fontWeight: 'bolder',
-    fontSize: '1.75em',
-    margin: '8px'
-  };
-
 
   return (
     <div>

@@ -18,7 +18,8 @@ function Tile(props){
     height: 'auto',
     border: '1px solid black',
     textAlign: 'center',
-    fontSize: '3em'
+    fontSize: '3em',
+    padding: '10px'
   }
 
   const h2Styles = {

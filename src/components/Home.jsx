@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import TilesContainer from './TilesContainer';
 import NewUserControl from './NewUserControl';
 import { Switch, Route } from 'react-router-dom';
+import About from './About';
 
 
 class Home extends React.Component {
@@ -51,10 +52,7 @@ class Home extends React.Component {
     this.setState({masterTileList: newMasterTileList});
   }
 
-
-
   render() {
-
     return (
       <div>
         <style jsx global>{`
@@ -67,6 +65,7 @@ class Home extends React.Component {
           <Switch>
             <Route exact path='/' render={()=><TilesContainer tileList={this.state.masterTileList}/>} />
             <Route path='/signup' render={()=><NewUserControl onNewUserCreation={this.handleAddingNewUser} />} />
+            <Route path='/about' render={()=><About/>} />
 
           </Switch>
         </div>
