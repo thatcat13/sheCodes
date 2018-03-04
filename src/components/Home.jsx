@@ -18,13 +18,28 @@ class Home extends React.Component {
         },
         1: {
           title: 'girls who code',
-          body: 'Closing the gender gap in tech, one girl at a time.',
+          body: 'Closing the gender gap in tech, one girl at a time',
           image: 'girlsWhoCode.jpg'
         },
         2: {
           title: 'black girls code',
-          body: 'Closing the gender gap in tech, one girl at a time.',
+          body: 'Our Vision: To increase the number of women of color in the digital space by empowering girls of color ages 7 to 17 to become innovators in STEM fields, leaders in their communities, and builders of their own futures through exposure to computer science and technology',
           image: 'blackGirlsCode.png'
+        },
+        3: {
+          title: 'made with code',
+          body: 'Check out some of the things we’ve been up to and find out how to host your own coding party IRL',
+          image: 'madewithcode.jpg'
+        },
+        4: {
+          title: 'girl develop it',
+          body: 'Don\'t be shy, develop it',
+          image: 'gdi.png'
+        },
+        5: {
+          title: 'code like a girl',
+          body: 'Code Like a Girl is an organisation dedicated to providing girls with the tools, knowledge and support to enter and flourish in the world of coding',
+          image: 'codelikeagirl.jpg'
         }
       }
     };
