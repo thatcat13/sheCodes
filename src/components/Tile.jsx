@@ -47,7 +47,7 @@ function Tile(props){
         <h2 style={h2Styles}>{props.title}</h2>
         <p>{props.body}</p>
         <img style={imgStyles} src={require(`./../${props.image}`)}></img>
-        <button style={buttonStyles} type='submit'>Find out more!</button>
+        <a href={props.link} ><button style={buttonStyles} type='submit'>Find out more!</button></a>
       </div>
     </div>
 
@@ -62,6 +62,7 @@ Tile.propTypes = {
   title: PropTypes.string,
   body: PropTypes.string,
   image: PropTypes.string,
+  link: PropTypes.string,
   tileId: PropTypes.string
 }
 

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import SignUp from './SignUp';
-import ConfirmationQuestions from './ConfirmationQuestions';
 import PropTypes from 'prop-types';
 
 class NewUserControl extends React.Component {
@@ -24,7 +23,7 @@ class NewUserControl extends React.Component {
     if (this.state.signUpFormVisible) {
       currentlyVisibleContent = <SignUp onNewUserCreation={this.props.onNewUserCreation}/>;
     } else {
-      currentlyVisibleContent = <ConfirmationQuestions onNewUserConfirmation={this.handleNewUserConfirmation}/>;
+      currentlyVisibleContent = <SignUp onNewUserConfirmation={this.handleNewUserConfirmation}/>;
     }
     return (
       <div>

@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 
 function SignUp(props){
   let _firstname = null;
-  let _lastname = null;
   let _email = null;
 
   function handleNewUserSubmission(event) {
     event.preventDefault();
     _firstname.value='';
-    _lastname.value='';
     _email.value='';
   }
 
@@ -53,10 +51,37 @@ function SignUp(props){
     margin: '5px'
   }
 
+  const outerDiv = {
+    display: 'flex',
+    justifyContent: 'space-around'
+  }
+
+  const innerDiv = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
+
+  const ageButtonStyles = {
+    width: '170px',
+    height: '70px',
+    borderRadius: '10px',
+    backgroundColor: 'lightgrey'
+  }
   return (
     <div style={anotherStyledComponentStyles}>
+      <div style={outerDiv}>
+        <div style={innerDiv}>
+          <h1>I'm in middle school!</h1>
+          <button style={ageButtonStyles} value='6-8' onClick={props.onNewUserConfirmation}>Grades 6 to 8</button>
+        </div>
+        <div style={innerDiv}>
+          <h1>I'm in high school!</h1>
+          <button style={ageButtonStyles} value='9-up' onClick={props.onNewUserConfirmation}>Grades 9 & up</button>
+        </div>
+      </div>
       <p style={titleStyles}>Sign Up</p>
-      <p><em>By registering you are confirming you are 12 years or older</em></p>
+      <p><em>By registering you are confirming you are 10 years or older</em></p>
       <form onSubmit={handleNewUserSubmission} style={formStyles}>
         <input style={inputStyles}
           type='text'
@@ -65,15 +90,10 @@ function SignUp(props){
           ref={(input) => {_firstname = input;}}/>
         <input style={inputStyles}
           type='text'
-          id='lastname'
-          placeholder='Last Name'
-          ref={(input) => {_lastname = input;}}/>
-        <input style={inputStyles}
-          type='text'
           id='email'
           placeholder='Email'
           ref={(input) => {_email = input;}}/>
-        <button style={buttonStyles} type='submit'>Welcome</button>
+        <button style={buttonStyles} type='submit'>Welcome!</button>
       </form>
     </div>
   );

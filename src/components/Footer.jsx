@@ -10,7 +10,14 @@ function Footer(){
     padding: '10px'
   }
   const copyrightStyles = {
-    fontSize: '1em'
+    fontSize: '1em',
+    marginLeft: '20px'
+  }
+  const relative = {
+    position: 'relative',
+    bottom: '0',
+    left: '0',
+    paddingTop: '20px'
   }
 
   const linkStyles = {
@@ -18,13 +25,13 @@ function Footer(){
     color: 'black',
     textShadow: '3px 2px 3px grey',
     textDecoration: 'none',
-    padding: '5px'
+    padding: '10px'
   }
 
   return (
-    <div>
+    <div style={relative}>
       <div style={outerDiv}>
-        <Link style={linkStyles} to="/">Home </Link>  <Link style={linkStyles} to="/signup">Sign Up</Link>  <Link style={linkStyles} to="/about">About</Link>
+        <Link style={linkStyles} to="/">Home </Link>  <Link style={linkStyles} to="/signup">SignUp</Link>  <Link style={linkStyles} to="/about">About</Link>
       </div>
       <div>
         <p style={copyrightStyles}>C 2018 sheCodes() All rights reserved.</p>

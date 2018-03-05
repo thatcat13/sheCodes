@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 function TilesContainer(props){
 
-  // props.onNewUserCreation({});
 
   const containerStyles = {
     alignItems: 'center'
@@ -14,16 +13,15 @@ function TilesContainer(props){
 
   return (
     <div style={containerStyles}>
-      <MediaQuery maxDeviceWidth={1824}>
-        {Object.keys(props.tileList).map(function(tileId) {
-          let tile = props.tileList[tileId];
-          return <Tile title={tile.title}
-            body={tile.body}
-            image={tile.image}
-            key={tileId} />;
-          })
-        }
-      </MediaQuery>
+      {Object.keys(props.tileList).map(function(tileId) {
+        let tile = props.tileList[tileId];
+        return <Tile title={tile.title}
+          body={tile.body}
+          image={tile.image}
+          key={tileId}
+          link={tile.link} />;
+        })
+      }
     </div>
   );
 }
