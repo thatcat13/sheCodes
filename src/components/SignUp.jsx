@@ -7,26 +7,38 @@ function SignUp(props){
 
   function handleNewUserSubmission(event) {
     event.preventDefault();
+    props.onCreatingNewUser({firstname: _firstname.value, email: _email.value})
     _firstname.value='';
     _email.value='';
   }
 
-  const anotherStyledComponentStyles = {
+
+  const outerContainerStyles = {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
     alignItems: 'center',
     position: 'relative'
   };
 
   const buttonStyles = {
-    width: '130px',
-    height: '40px',
+    width: '220px',
+    height: '50px',
     borderRadius: '10px',
     boxShadow: '3px 2px 3px grey',
     fontFamily: 'Roboto, monospace',
     fontWeight: 'bolder',
-    fontSize: '1em',
+    fontSize: '1.75em',
+    padding: '5px',
+    margin: '10px'
+  };
+  const ageButtonStyles = {
+    width: '300px',
+    height: '150px',
+    borderRadius: '10px',
+    boxShadow: '3px 2px 3px grey',
+    fontFamily: 'Roboto, monospace',
+    fontWeight: 'bolder',
+    fontSize: '1.75em',
     padding: '5px',
     margin: '10px'
   };
@@ -36,7 +48,8 @@ function SignUp(props){
     textShadow: '3px 2px 3px grey',
     fontSize: '50px',
     textAlign: 'center',
-    margin: '0'
+    margin: '0',
+    padding: '10px'
   };
   const formStyles = {
     display: 'flex',
@@ -46,61 +59,65 @@ function SignUp(props){
   };
 
   const inputStyles = {
-    width: '500px',
-    height: '20px',
-    margin: '5px'
+    width: 'auto',
+    height: 'auto',
+    margin: '5px',
+    fontSize: '2em',
+    border: '1px solid darkgrey'
   }
 
-  const outerDiv = {
+  const ageDiv = {
     display: 'flex',
-    justifyContent: 'space-around'
+    justifyContent: 'space-between'
+  }
+  const formDiv = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    marginTop: '50px'
   }
 
   const innerDiv = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: '40px',
+    textAlign: 'center'
   }
 
-  const ageButtonStyles = {
-    width: '170px',
-    height: '70px',
-    borderRadius: '10px',
-    backgroundColor: 'lightgrey'
-  }
   return (
-    <div style={anotherStyledComponentStyles}>
-      <div style={outerDiv}>
+    <div style={outerContainerStyles}>
+      <div style={ageDiv}>
         <div style={innerDiv}>
-          <h1>I'm in middle school!</h1>
-          <button style={ageButtonStyles} value='6-8' onClick={props.onNewUserConfirmation}>Grades 6 to 8</button>
+          <button style={ageButtonStyles} value='middleschool' onClick={props.onCreatingUserTileList}>Middle schoolers click here!</button>
         </div>
         <div style={innerDiv}>
-          <h1>I'm in high school!</h1>
-          <button style={ageButtonStyles} value='9-up' onClick={props.onNewUserConfirmation}>Grades 9 & up</button>
+          <button style={ageButtonStyles} value='highschool' onClick={props.onCreatingUserTileList}>High schoolers click here!</button>
         </div>
       </div>
-      <p style={titleStyles}>Sign Up</p>
-      <p><em>By registering you are confirming you are 10 years or older</em></p>
-      <form onSubmit={handleNewUserSubmission} style={formStyles}>
-        <input style={inputStyles}
-          type='text'
-          id='firstname'
-          placeholder='First Name'
-          ref={(input) => {_firstname = input;}}/>
-        <input style={inputStyles}
-          type='text'
-          id='email'
-          placeholder='Email'
-          ref={(input) => {_email = input;}}/>
-        <button style={buttonStyles} type='submit'>Welcome!</button>
-      </form>
+      <div style={formDiv}>
+        <p style={titleStyles}>Sign Up</p>
+        <form onSubmit={handleNewUserSubmission} style={formStyles}>
+          <input style={inputStyles}
+            type='text'
+            id='firstname'
+            placeholder='First Name'
+            ref={(input) => {_firstname = input;}}/>
+          <input style={inputStyles}
+            type='text'
+            id='email'
+            placeholder='Email'
+            ref={(input) => {_email = input;}}/>
+          <button style={buttonStyles} type='submit'>Welcome!</button>
+        </form>
+      </div>
     </div>
   );
 }
 
 SignUp.propTypes = {
-  onNewUserConfirmation: PropTypes.func
+  onCreatingUserTileList: PropTypes.func,
+  onCreatingNewUser: PropTypes.func
 }
 
 export default SignUp;

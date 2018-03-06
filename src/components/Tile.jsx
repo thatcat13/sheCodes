@@ -63,6 +63,7 @@ Tile.propTypes = {
   body: PropTypes.string,
   image: PropTypes.string,
   link: PropTypes.string,
+  genre: PropTypes.string,
   tileId: PropTypes.string
 }
 

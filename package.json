@@ -24,7 +24,8 @@
     "react-transition-group": "^2.2.1",
     "reactstrap": "^4.8.0",
     "redux": "^3.7.2",
-    "styled-jsx": "^2.2.5"
+    "styled-jsx": "^2.2.5",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

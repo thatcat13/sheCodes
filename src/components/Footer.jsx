@@ -17,7 +17,7 @@ function Footer(){
     position: 'relative',
     bottom: '0',
     left: '0',
-    paddingTop: '20px'
+    marginTop: '50px'
   }
 
   const linkStyles = {
