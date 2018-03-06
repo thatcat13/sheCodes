@@ -71,6 +71,7 @@ class Home extends React.Component {
 
   handleCreatingUserTileList(newUserList) {
 
+
     for (let key of Object.keys(this.state.masterTileList)) {
       let testList = this.state.masterTileList[key].genre;
       console.log(testList);
