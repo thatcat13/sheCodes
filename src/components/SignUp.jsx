@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function SignUp(props){
   let _firstname = null;
@@ -85,14 +86,24 @@ function SignUp(props){
     textAlign: 'center'
   }
 
+  function handleMiddleSchoolClick() {
+    props.onCreatingUserTileList('middleschool');
+    console.log('hoooo!');
+  }
+
+  function handleHighSchoolClick() {
+    props.onCreatingUserTileList('highschool');
+    console.log('hey!');
+  }
+
   return (
     <div style={outerContainerStyles}>
       <div style={ageDiv}>
         <div style={innerDiv}>
-          <button style={ageButtonStyles} value='middleschool' onClick={props.onCreatingUserTileList}>Middle schoolers click here!</button>
+          <button style={ageButtonStyles}  onClick={handleMiddleSchoolClick}>Middle schoolers click here!</button>
         </div>
         <div style={innerDiv}>
-          <button style={ageButtonStyles} value='highschool' onClick={props.onCreatingUserTileList}>High schoolers click here!</button>
+          <button style={ageButtonStyles}  onClick={handleHighSchoolClick}>High schoolers click here!</button>
         </div>
       </div>
       <div style={formDiv}>
@@ -108,7 +119,7 @@ function SignUp(props){
             id='email'
             placeholder='Email'
             ref={(input) => {_email = input;}}/>
-          <button style={buttonStyles} type='submit'>Welcome!</button>
+          <Link to="/user"><button style={buttonStyles} type='submit'>Welcome!</button></Link>
         </form>
       </div>
     </div>
