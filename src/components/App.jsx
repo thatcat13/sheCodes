@@ -12,7 +12,7 @@ function App() {
       <Header />
       <style jsx global>{`
         body {
-          font: 14px 'Roboto', monospace, sans-serif;
+          font-family: monospace, sans-serif;
           margin: 20px;
         }
       `}</style>

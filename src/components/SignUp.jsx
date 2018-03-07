@@ -24,7 +24,7 @@ function SignUp(props){
   };
 
   const buttonStyles = {
-    width: '270px',
+    width: '300px',
     height: '50px',
     borderRadius: '10px',
     boxShadow: '3px 2px 3px grey',
@@ -32,18 +32,20 @@ function SignUp(props){
     fontWeight: 'bolder',
     fontSize: '1.75em',
     padding: '5px',
-    margin: '10px'
+    margin: '10px',
+    backgroundColor: 'lightgrey'
   };
   const ageButtonStyles = {
     width: '300px',
-    height: '150px',
+    height: '175px',
     borderRadius: '10px',
     boxShadow: '3px 2px 3px grey',
     fontFamily: 'Roboto, monospace',
     fontWeight: 'bolder',
     fontSize: '1.75em',
     padding: '5px',
-    margin: '10px'
+    margin: '10px',
+    backgroundColor: 'lightgrey'
   };
 
   const titleStyles = {
@@ -89,8 +91,8 @@ function SignUp(props){
   }
 
   const linkStyles = {
-    width: '270px',
-    height: '50px',
+    width: '300px',
+    height: '70px',
     borderRadius: '10px',
     boxShadow: '3px 2px 3px grey',
     fontFamily: 'Roboto, monospace',

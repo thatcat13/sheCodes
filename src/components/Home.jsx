@@ -63,9 +63,8 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <style jsx global>{`
+        <style jsx>{`
             body {
-              font: 14px 'Roboto', monospace, sans-serif;
               margin: 20px;
             }
             `}</style>

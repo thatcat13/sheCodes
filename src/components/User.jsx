@@ -30,7 +30,7 @@ function User(props){
   const userInformation =
     <div style={outerStyles}>
       <div style={tileStyles}>
-        <h2 style={h2Styles}>Oh, hi! Here's your list, {props.firstname}</h2>
+        <h2 style={h2Styles}>Oh, hi! Here's your list, {props.firstname}:</h2>
       </div>
     </div>
 
@@ -42,9 +42,7 @@ function User(props){
 }
 
 User.propTypes = {
-  firstname: PropTypes.string,
-  email: PropTypes.string,
-  userId: PropTypes.string
+  firstname: PropTypes.string
 }
 
 export default User;
