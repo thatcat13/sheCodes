@@ -23,7 +23,8 @@ function Tile(props){
   }
 
   const h2Styles = {
-    marginBottom: '0'
+    marginBottom: '0',
+    textShadow: '3px 2px 3px grey'
   }
 
   const buttonStyles = {

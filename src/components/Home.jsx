@@ -10,6 +10,7 @@ import UserTiles from './UserTiles';
 import HighSchoolList from '../assets/HighSchoolList';
 import MiddleSchoolList from '../assets/MiddleSchoolList';
 import Tile from './Tile';
+import User from './User';
 
 
 
@@ -51,12 +52,12 @@ class Home extends React.Component {
 }
 
   handleCreatingNewUser(newUserObject) {
+    console.log('clickmofo!');
     let userId = v4();
     let newUser = Object.assign({}, this.state.user, {
       [userId]: newUserObject
     })
     this.setState({user: newUser});
-    console.log('click');
   }
 
   render() {
@@ -69,10 +70,10 @@ class Home extends React.Component {
             }
             `}</style>
           <Switch>
-            <Route exact path='/' render={()=><TilesContainer highSchoolList={this.state.highSchoolList} middleSchoolList={this.state.middleSchoolList} />} />
-            <Route path='/signup' render={()=><SignUp onCreatingUserTileList={this.handleCreatingUserTileList} onCreatingNewUser={this.handleCreatingNewUser}/>} />
-            <Route path='/about' render={()=><About/>} />
-            <Route path='/user' render={()=><UserTiles userTileList={this.state.userTileList} userInfo={this.state.user}/>} />
+            <Route exact path='/' render={() => <TilesContainer highSchoolList={this.state.highSchoolList} middleSchoolList={this.state.middleSchoolList} />} />
+            <Route path='/signup' render={() => <SignUp onCreatingUserTileList={this.handleCreatingUserTileList} onCreatingNewUser={this.handleCreatingNewUser}/>} />
+            <Route path='/about' render={() => <About/>} />
+            <Route path='/user' render={() => <UserTiles userTileList={this.state.userTileList} userInfo={this.state.user}/>} />
           </Switch>
           <Footer />
         </div>

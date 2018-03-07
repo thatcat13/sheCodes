@@ -22,14 +22,15 @@ function User(props){
   }
 
   const h2Styles = {
-    marginBottom: '0'
+    marginBottom: '0',
+    textShadow: '3px 2px 3px grey'
   }
 
 
   const userInformation =
     <div style={outerStyles}>
       <div style={tileStyles}>
-        <h2 style={h2Styles}>Welcome, {props.firstname}</h2>
+        <h2 style={h2Styles}>Oh, hi! Here's your list, {props.firstname}</h2>
       </div>
     </div>
 

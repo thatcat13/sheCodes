@@ -10,7 +10,8 @@ function Header(){
     padding: '10px'
   }
   const pStyles = {
-    fontSize: '3em'
+    fontSize: '3em',
+    textShadow: '3px 2px 3px grey'
   }
   const linkStyles = {
     fontSize: '2.5em',

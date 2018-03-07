@@ -7,12 +7,12 @@ import User from './User';
 
 function UserTiles(props){
 
+  console.log(props.userInfo);
 
   const containerStyles = {
     alignItems: 'center'
   };
 
-  console.log(props.userInfo);
   return (
     <div style={containerStyles}>
       <User />

@@ -7,8 +7,10 @@ function SignUp(props){
   let _email = null;
 
   function handleNewUserSubmission(event) {
+    console.log('click');
     event.preventDefault();
     props.onCreatingNewUser({firstname: _firstname.value, email: _email.value})
+    console.log(_firstname.value);
     _firstname.value='';
     _email.value='';
   }
@@ -22,7 +24,7 @@ function SignUp(props){
   };
 
   const buttonStyles = {
-    width: '220px',
+    width: '270px',
     height: '50px',
     borderRadius: '10px',
     boxShadow: '3px 2px 3px grey',
@@ -86,6 +88,22 @@ function SignUp(props){
     textAlign: 'center'
   }
 
+  const linkStyles = {
+    width: '270px',
+    height: '50px',
+    borderRadius: '10px',
+    boxShadow: '3px 2px 3px grey',
+    fontFamily: 'Roboto, monospace',
+    fontWeight: 'bolder',
+    fontSize: '1.75em',
+    padding: '5px',
+    margin: '10px',
+    textDecoration: 'none',
+    backgroundColor: 'lightgrey',
+    color: 'black',
+    textAlign: 'center'
+  }
+
   function handleMiddleSchoolClick() {
     props.onCreatingUserTileList('middleschool');
     console.log('hoooo!');
@@ -100,10 +118,10 @@ function SignUp(props){
     <div style={outerContainerStyles}>
       <div style={ageDiv}>
         <div style={innerDiv}>
-          <button style={ageButtonStyles}  onClick={handleMiddleSchoolClick}>Middle schoolers click here!</button>
+          <button style={ageButtonStyles}  onClick={handleMiddleSchoolClick}>In middle school? Click here!</button>
         </div>
         <div style={innerDiv}>
-          <button style={ageButtonStyles}  onClick={handleHighSchoolClick}>High schoolers click here!</button>
+          <button style={ageButtonStyles}  onClick={handleHighSchoolClick}>In high school? Click here!</button>
         </div>
       </div>
       <div style={formDiv}>
@@ -119,7 +137,8 @@ function SignUp(props){
             id='email'
             placeholder='Email'
             ref={(input) => {_email = input;}}/>
-          <Link to="/user"><button style={buttonStyles} type='submit'>Welcome!</button></Link>
+          <button style={buttonStyles} type='submit'>Welcome!</button>
+          <Link style={linkStyles} to="/user">Click here to see your list!</Link>
         </form>
       </div>
     </div>

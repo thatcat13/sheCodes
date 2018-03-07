@@ -2,7 +2,6 @@ import React from 'react';
 import Tile from './Tile';
 import MediaQuery from 'react-responsive';
 import PropTypes from 'prop-types';
-import User from './User';
 
 
 function TilesContainer(props){
@@ -14,12 +13,7 @@ function TilesContainer(props){
 
   return (
     <div style={containerStyles}>
-      {Object.keys(props.userInfo).map(function(userId) {
-        let user = props.userInfo[userId];
-        return <User firstname={user.firstname}
-          key={userId} />;
-      })
-    }
+
       {Object.keys(props.highSchoolList).map(function(tileId, key) {
         let tile = props.highSchoolList[tileId];
         return <Tile title={tile.title}
@@ -44,8 +38,7 @@ function TilesContainer(props){
 
 TilesContainer.propTypes = {
   highSchoolList: PropTypes.object,
-  middleSchoolList: PropTypes.object,
-  userInfo: PropTypes.object
+  middleSchoolList: PropTypes.object
 };
 
 export default TilesContainer;
