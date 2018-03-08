@@ -12,6 +12,7 @@ function SignUp(props){
     console.log(_firstname.value);
     _firstname.value='';
     _email.value='';
+
   }
 
 
@@ -63,7 +64,7 @@ function SignUp(props){
   };
 
   const inputStyles = {
-    width: 'auto',
+    width: '90%',
     height: 'auto',
     margin: '5px',
     fontSize: '2em',
@@ -105,21 +106,30 @@ function SignUp(props){
     textAlign: 'center'
   }
 
-  function handleSchoolValue(event) {
-    let schoolValue = {value: event.target.value};
-    console.log(schoolValue);
-    return schoolValue;
-  };
-  function handleGrabValue() {
-    let thing = handleSchoolValue();
-    props.onCreatingUserTileList(thing);
+  const labelStyles = {
+    fontSize: '2em',
+    padding: '10px',
+    border: '1px solid lightgrey',
+    color: '#878787'
   }
+
+
+  const selectStyles = {
+    fontSize: '1em',
+    float: 'right',
+    paddingLeft: '50px',
+    color: '#878787'
+  }
+
+  function handleSchoolValue(event) {
+    console.log({value: event.target.value});
+    props.onCreatingUserTileList({value: event.target.value});
+  };
 
   function handleFormClick() {
     console.log('click');
     event.preventDefault();
-    props.onCreatingNewUser({firstname: _firstname.value, email: _email.value})
-    console.log(_firstname.value);
+    props.onCreatingNewUser({firstname: _firstname.value, email: _email.value});
     _firstname.value='';
     _email.value='';
   };
@@ -139,10 +149,10 @@ function SignUp(props){
             id='email'
             placeholder='Email'
             ref={(input) => {_email = input;}}/>
-          <label>
-            What's your age group?:
-            <select onChange={handleGrabValue}>
-              <option>Pick your school:</option>
+          <label style={labelStyles}>
+            What's your age group?
+            <select style={selectStyles} onChange={handleSchoolValue}>
+              <option>Select here</option>
               <option value="middleschool">Middle school</option>
               <option value="highschool">High school</option>
             </select>

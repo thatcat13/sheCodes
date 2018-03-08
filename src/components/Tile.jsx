@@ -35,7 +35,8 @@ function Tile(props){
     fontFamily: 'Roboto, monospace',
     fontWeight: 'bolder',
     fontSize: '0.75em',
-    margin: '10px'
+    margin: '10px',
+    backgroundColor: '#abf4f4'
   };
 
   const imgStyles = {
