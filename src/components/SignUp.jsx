@@ -33,7 +33,7 @@ function SignUp(props){
     fontSize: '1.75em',
     padding: '5px',
     margin: '10px',
-    backgroundColor: 'lightgrey'
+    backgroundColor: '#a9e8e8'
   };
   const ageButtonStyles = {
     width: '300px',
@@ -45,7 +45,7 @@ function SignUp(props){
     fontSize: '1.75em',
     padding: '5px',
     margin: '10px',
-    backgroundColor: 'lightgrey'
+    backgroundColor: '#a9e8e8'
   };
 
   const titleStyles = {
@@ -103,7 +103,8 @@ function SignUp(props){
     textDecoration: 'none',
     backgroundColor: 'lightgrey',
     color: 'black',
-    textAlign: 'center'
+    textAlign: 'center',
+    backgroundColor: '#a9e8e8'
   }
 
   function handleMiddleSchoolClick() {

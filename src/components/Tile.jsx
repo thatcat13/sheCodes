@@ -36,7 +36,7 @@ function Tile(props){
     fontWeight: 'bolder',
     fontSize: '0.75em',
     margin: '10px',
-    backgroundColor: '#abf4f4'
+    backgroundColor: '#a9e8e8'
   };
 
   const imgStyles = {
