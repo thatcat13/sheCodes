@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './Header';
 import Home from './Home';
 import { Switch, Route } from 'react-router-dom';
-
+import background from '../black-thread-light.png';
 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         body {
           font-family: monospace, sans-serif;
           margin: 20px;
+          background-image: url(${background});
         }
       `}</style>
       <Home />
