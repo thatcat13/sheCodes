@@ -36,14 +36,15 @@ class Home extends React.Component {
   handleCreatingUserTileList(schooltype) {
     console.log(schooltype);
     let newUserTileList = {};
-    if (schooltype === 'middleschool') {
+    if (schooltype == 'middleschool') {
       newUserTileList = this.state.middleSchoolList;
       console.log(newUserTileList);
       this.setState({userTileList: newUserTileList});
-    } else if (schooltype === 'highschool') {
+    } else if (schooltype == 'highschool') {
       newUserTileList = this.state.highSchoolList;
       console.log(newUserTileList);
       this.setState({userTileList: newUserTileList});
+      console.log(this.state.userTileList);
     } else {
       newUserTileList = this.state;
     console.log(newUserTileList);

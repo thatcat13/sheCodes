@@ -8,15 +8,12 @@ import User from './User';
 function UserTiles(props){
 
   function handleNewUserSubmission(event) {
-    console.log('click');
     event.preventDefault();
     props.onCreatingNewUser({firstname: _firstname.value, email: _email.value})
-    console.log(_firstname.value);
     _firstname.value='';
     _email.value='';
   }
 
-  console.log(props.userInfo);
 
   const containerStyles = {
     alignItems: 'center'
@@ -33,6 +30,7 @@ function UserTiles(props){
       }
       {Object.keys(props.userTileList).map(function(tileId) {
         let tile = props.userTileList[tileId];
+        console.log(tile);
         return <Tile title={tile.title}
           body={tile.body}
           image={tile.image}

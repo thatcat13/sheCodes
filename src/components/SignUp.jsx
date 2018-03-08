@@ -7,7 +7,6 @@ function SignUp(props){
   let _email = null;
 
   function handleNewUserSubmission(event) {
-    console.log('click');
     event.preventDefault();
     props.onCreatingNewUser({firstname: _firstname.value, email: _email.value})
     console.log(_firstname.value);
@@ -106,26 +105,27 @@ function SignUp(props){
     textAlign: 'center'
   }
 
-  function handleMiddleSchoolClick() {
-    props.onCreatingUserTileList('middleschool');
-    console.log('hoooo!');
+  function handleSchoolValue(event) {
+    let schoolValue = {value: event.target.value};
+    console.log(schoolValue);
+    return schoolValue;
+  };
+  function handleGrabValue() {
+    let thing = handleSchoolValue();
+    props.onCreatingUserTileList(thing);
   }
 
-  function handleHighSchoolClick() {
-    props.onCreatingUserTileList('highschool');
-    console.log('hey!');
-  }
+  function handleFormClick() {
+    console.log('click');
+    event.preventDefault();
+    props.onCreatingNewUser({firstname: _firstname.value, email: _email.value})
+    console.log(_firstname.value);
+    _firstname.value='';
+    _email.value='';
+  };
 
   return (
     <div style={outerContainerStyles}>
-      <div style={ageDiv}>
-        <div style={innerDiv}>
-          <button style={ageButtonStyles}  onClick={handleMiddleSchoolClick}>In middle school? Click here!</button>
-        </div>
-        <div style={innerDiv}>
-          <button style={ageButtonStyles}  onClick={handleHighSchoolClick}>In high school? Click here!</button>
-        </div>
-      </div>
       <div style={formDiv}>
         <p style={titleStyles}>Sign Up</p>
         <form onSubmit={handleNewUserSubmission} style={formStyles}>
@@ -139,8 +139,16 @@ function SignUp(props){
             id='email'
             placeholder='Email'
             ref={(input) => {_email = input;}}/>
-          <button style={buttonStyles} type='submit'>Welcome!</button>
-          <Link style={linkStyles} to="/user">Click here to see your list!</Link>
+          <label>
+            What's your age group?:
+            <select onChange={handleGrabValue}>
+              <option>Pick your school:</option>
+              <option value="middleschool">Middle school</option>
+              <option value="highschool">High school</option>
+            </select>
+          </label>
+
+          <Link onClick={handleFormClick} to="/user"><button  style={buttonStyles} type='submit'>Welcome!</button></Link>
         </form>
       </div>
     </div>
