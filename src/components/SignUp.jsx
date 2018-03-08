@@ -3,18 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function SignUp(props){
-  let _firstname = null;
-  let _email = null;
-
-  function handleNewUserSubmission(event) {
-    event.preventDefault();
-    props.onCreatingNewUser({firstname: _firstname.value, email: _email.value})
-    console.log(_firstname.value);
-    _firstname.value='';
-    _email.value='';
-
-  }
-
 
   const outerContainerStyles = {
     display: 'flex',
@@ -122,43 +110,44 @@ function SignUp(props){
   }
 
   function handleSchoolValue(event) {
-    console.log({value: event.target.value});
-    props.onCreatingUserTileList({value: event.target.value});
-  };
+    event.preventDefault();
+    console.log('tileList click');
+    console.log(event.target.value);
+    console.log(typeof event.target.value);
+    let schoolValue = event.target.value;
+    props.onCreatingUserTileList(schoolValue);
+
+  }
+
+
 
   function handleFormClick() {
-    console.log('click');
-    event.preventDefault();
-    props.onCreatingNewUser({firstname: _firstname.value, email: _email.value});
-    _firstname.value='';
-    _email.value='';
+
   };
 
   return (
     <div style={outerContainerStyles}>
       <div style={formDiv}>
         <p style={titleStyles}>Sign Up</p>
-        <form onSubmit={handleNewUserSubmission} style={formStyles}>
+        <form style={formStyles}>
           <input style={inputStyles}
             type='text'
             id='firstname'
-            placeholder='First Name'
-            ref={(input) => {_firstname = input;}}/>
+            placeholder='First Name'/>
           <input style={inputStyles}
             type='text'
             id='email'
-            placeholder='Email'
-            ref={(input) => {_email = input;}}/>
+            placeholder='Email'/>
           <label style={labelStyles}>
             What's your age group?
-            <select style={selectStyles} onChange={handleSchoolValue}>
+            <select onChange={handleSchoolValue} style={selectStyles}>
               <option>Select here</option>
               <option value="middleschool">Middle school</option>
               <option value="highschool">High school</option>
             </select>
           </label>
 
-          <Link onClick={handleFormClick} to="/user"><button  style={buttonStyles} type='submit'>Welcome!</button></Link>
+          <Link to="/user"><button style={buttonStyles} type='submit'>Welcome!</button></Link>
         </form>
       </div>
     </div>
@@ -166,8 +155,7 @@ function SignUp(props){
 }
 
 SignUp.propTypes = {
-  onCreatingUserTileList: PropTypes.func,
-  onCreatingNewUser: PropTypes.func
+  onCreatingUserTileList: PropTypes.func
 }
 
 export default SignUp;

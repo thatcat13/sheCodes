@@ -23,10 +23,10 @@ class Home extends React.Component {
       middleSchoolList: MiddleSchoolList,
       userTileList: {},
       user: {
-        // 1: {
-        //   firstname: 'Cat',
-        //   email: 'blerg@blerg.com'
-        // }
+        1: {
+          firstname: 'Cat',
+          email: 'blerg@blerg.com'
+        }
       }
     };
     this.handleCreatingUserTileList = this.handleCreatingUserTileList.bind(this);
@@ -35,30 +35,22 @@ class Home extends React.Component {
 
   handleCreatingUserTileList(schooltype) {
     console.log(schooltype);
-    let newUserTileList = {};
+    let newUserTileList = this.state.userTileList
     if (schooltype == 'middleschool') {
       newUserTileList = this.state.middleSchoolList;
-      console.log(newUserTileList);
-      this.setState({userTileList: newUserTileList});
+      console.log(newUserTileList)
     } else if (schooltype == 'highschool') {
       newUserTileList = this.state.highSchoolList;
-      console.log(newUserTileList);
-      this.setState({userTileList: newUserTileList});
-      console.log(this.state.userTileList);
+      console.log(newUserTileList)
     } else {
       newUserTileList = this.state;
-    console.log(newUserTileList);
-    this.setState({userTileList: newUserTileList});
+      console.log(newUserTileList)
     }
-}
+    return newUserTileList;
+  }
 
   handleCreatingNewUser(newUserObject) {
-    console.log('clickmofo!');
-    let userId = v4();
-    let newUser = Object.assign({}, this.state.user, {
-      [userId]: newUserObject
-    })
-    this.setState({user: newUser});
+
   }
 
   render() {
@@ -72,8 +64,8 @@ class Home extends React.Component {
           <Switch>
             <Route exact path='/' render={() => <TilesContainer highSchoolList={this.state.highSchoolList} middleSchoolList={this.state.middleSchoolList} />} />
             <Route path='/signup' render={() => <SignUp onCreatingUserTileList={this.handleCreatingUserTileList} onCreatingNewUser={this.handleCreatingNewUser}/>} />
-            <Route path='/about' render={() => <About/>} />
             <Route path='/user' render={() => <UserTiles userTileList={this.state.userTileList} userInfo={this.state.user}/>} />
+            <Route path='/about' render={() => <About/>} />
           </Switch>
           <Footer />
         </div>
