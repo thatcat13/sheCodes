@@ -30,7 +30,7 @@ function User(props){
   const userInformation =
     <div style={outerStyles}>
       <div style={tileStyles}>
-        <h2 style={h2Styles}>Oh, hi! Here's your list, {props.firstname}:</h2>
+        <h2 style={h2Styles}>Oh, hi! Here's your personalized list, {props.firstname}:</h2>
       </div>
     </div>
 

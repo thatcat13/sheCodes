@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function SignUp(props){
+  let _firstname = null;
+  let _email = null;
 
   const outerContainerStyles = {
     display: 'flex',
@@ -97,7 +99,7 @@ function SignUp(props){
   const labelStyles = {
     fontSize: '2em',
     padding: '10px',
-    border: '1px solid lightgrey',
+    border: '1px solid black',
     color: '#878787'
   }
 
@@ -119,34 +121,38 @@ function SignUp(props){
 
   }
 
-
-
-  function handleFormClick() {
-
-  };
+  function handleNewUserSubmission(event) {
+    console.log('i can haz click?');
+    event.preventDefault();
+    props.onCreatingNewUser({firstname: _firstname.value, email: _email.value})
+    console.log(_firstname.value);
+    _firstname.value='';
+    _email.value='';
+  }
 
   return (
     <div style={outerContainerStyles}>
       <div style={formDiv}>
         <p style={titleStyles}>Sign Up</p>
-        <form style={formStyles}>
+        <label style={labelStyles}>
+          What's your age group?
+          <select onChange={handleSchoolValue} style={selectStyles}>
+            <option>Select here</option>
+            <option value="middleschool">Middle school</option>
+            <option value="highschool">High school</option>
+          </select>
+        </label>
+        <form onSubmit={handleNewUserSubmission} style={formStyles}>
           <input style={inputStyles}
             type='text'
             id='firstname'
-            placeholder='First Name'/>
+            placeholder='First Name'
+            ref={(input) => {_firstname = input;}}/>
           <input style={inputStyles}
             type='text'
             id='email'
-            placeholder='Email'/>
-          <label style={labelStyles}>
-            What's your age group?
-            <select onChange={handleSchoolValue} style={selectStyles}>
-              <option>Select here</option>
-              <option value="middleschool">Middle school</option>
-              <option value="highschool">High school</option>
-            </select>
-          </label>
-
+            placeholder='Email'
+            ref={(input) => {_firstname = input;}}/>
           <Link to="/user"><button style={buttonStyles} type='submit'>Welcome!</button></Link>
         </form>
       </div>
@@ -155,7 +161,8 @@ function SignUp(props){
 }
 
 SignUp.propTypes = {
-  onCreatingUserTileList: PropTypes.func
+  onCreatingUserTileList: PropTypes.func,
+  onCreatingNewUser: PropTypes.func
 }
 
 export default SignUp;

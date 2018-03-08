@@ -44,13 +44,18 @@ class Home extends React.Component {
       console.log(newUserTileList)
     } else {
       newUserTileList = this.state;
-      console.log(newUserTileList)
+      console.log(newUserTileList);
     }
-    return newUserTileList;
+    this.setState({userTileList: newUserTileList});
   }
 
   handleCreatingNewUser(newUserObject) {
-
+    console.log('clickmofo!');
+    let userId = v4();
+    let newUser = Object.assign({}, this.state.user, {
+      [userId]: newUserObject
+    })
+    this.setState({user: newUser});
   }
 
   render() {

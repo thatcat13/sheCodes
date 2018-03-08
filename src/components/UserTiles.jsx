@@ -30,7 +30,6 @@ function UserTiles(props){
       }
       {Object.keys(props.userTileList).map(function(tileId) {
         let tile = props.userTileList[tileId];
-        console.log(tile);
         return <Tile title={tile.title}
           body={tile.body}
           image={tile.image}
